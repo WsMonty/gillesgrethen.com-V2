@@ -2,14 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      http-equiv="X-UA-Compatible"
-      content="IE=edge"
-    />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gilles Grethen</title>
     <link
       rel="stylesheet"
@@ -20,25 +14,17 @@
       href="./src/imgs/favicon.ico"
       type="image/x-icon"
     />
-    <link
-      rel="stylesheet"
-      href="./src/scss/style.scss"
-    />
-    <script
-      defer
-      type="module"
-      src="./src/js/script.js"
-    ></script>
+    <link rel="stylesheet" href="./src/scss/style.scss" />
+    <script defer type="module" src="./src/js/script.js"></script>
   </head>
   <body>
-    <div class="card card_quartet">
+    <div class="card card_quartet hidden">
+      <button class="btn-card_close">X</button>
       <h2>Gilles Grethen Quartet</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Facere, explicabo! Earum
-        quisquam quia, rem nemo possimus nobis
-        libero consequuntur quo exercitationem
-        quod illo commodi ipsam perspiciatis
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,
+        explicabo! Earum quisquam quia, rem nemo possimus nobis libero
+        consequuntur quo exercitationem quod illo commodi ipsam perspiciatis
         beatae perferendis aspernatur voluptas!
       </p>
       <div class="gallery">
@@ -75,17 +61,17 @@
       </div>
     </div>
     <div class="card card_concerts hidden">
+      <button class="btn-card_close">X</button>
       <h2>Concerts</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Facere, explicabo! Earum
-        quisquam quia, rem nemo possimus nobis
-        libero consequuntur quo exercitationem
-        quod illo commodi ipsam perspiciatis
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,
+        explicabo! Earum quisquam quia, rem nemo possimus nobis libero
+        consequuntur quo exercitationem quod illo commodi ipsam perspiciatis
         beatae perferendis aspernatur voluptas!
       </p>
     </div>
     <div class="card card_contact hidden">
+      <button class="btn-card_close">X</button>
       <h2>Contact</h2>
       <h3>Management & Booking</h3>
       <h4>Stephanie Baustert</h4>
@@ -95,31 +81,19 @@
     <div class="container--left">
       <ul class="list_links--left">
         <li class="list_item link_quartet">
-          <a
-            href="#"
-            class="link"
-            data-name="quartet"
+          <a href="#" class="link" data-name="quartet"
             >Gilles Grethen Quartet</a
           >
         </li>
         <li class="list_item link_concerts">
-          <a
-            href="#"
-            class="link"
-            data-name="concerts"
-            >Concerts</a
-          >
+          <a href="#" class="link" data-name="concerts">Concerts</a>
         </li>
         <li class="list_item link_contact">
-          <a
-            href="#"
-            class="link"
-            data-name="contact"
-            >Contact</a
-          >
+          <a href="#" class="link" data-name="contact">Contact</a>
         </li>
       </ul>
     </div>
     <div class="container-right"></div>
+    <div class="overlay hidden"></div>
   </body>
 </html>
