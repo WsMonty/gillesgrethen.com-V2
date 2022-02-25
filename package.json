@@ -1,0 +1,16 @@
+{
+  "name": "gillesgrethen.com",
+  "version": "1.0.0",
+  "description": "New dyncamic Website 2022",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Gilles Grethen",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.3.2",
+    "parcel": "^2.3.2"
+  }
+}
