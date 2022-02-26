@@ -1,0 +1,22 @@
+.container--left {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list_links--left {
+  list-style: none;
+  z-index: 2;
+}
+
+.list_item {
+  padding: 2em;
+}
+
+.link {
+  /* padding: 2em; */
+  text-decoration: none;
+  color: white;
+}

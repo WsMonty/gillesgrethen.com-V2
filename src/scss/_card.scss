@@ -1,0 +1,24 @@
+.card {
+  width: 0em; // 60%
+  height: 0em; //90%
+  margin: 2em 0 3em 0;
+  background-color: $color-light-background;
+  padding: 0em; //4em
+  border-radius: $border-radius;
+  overflow: auto;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 500ms linear;
+  transition: height 500ms linear 500ms;
+  transition: padding 500ms linear;
+}
+
+.btn-card_close {
+  border: none;
+  position: absolute;
+  top: 4%;
+  right: 3%;
+  font-size: 1em;
+  background-color: transparent;
+  cursor: pointer;
+}

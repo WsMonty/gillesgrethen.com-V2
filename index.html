@@ -14,86 +14,122 @@
       href="./src/imgs/favicon.ico"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="./src/scss/style.scss" />
+    <link rel="stylesheet" href="./src/scss/main.scss" />
     <script defer type="module" src="./src/js/script.js"></script>
   </head>
   <body>
-    <div class="card card_quartet hidden">
-      <button class="btn-card_close">X</button>
-      <h2>Gilles Grethen Quartet</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,
-        explicabo! Earum quisquam quia, rem nemo possimus nobis libero
-        consequuntur quo exercitationem quod illo commodi ipsam perspiciatis
-        beatae perferendis aspernatur voluptas!
-      </p>
-      <div class="gallery">
-        <img
-          class="img_quartet"
-          data-num="1"
-          src="./src/imgs/GG4tet4_NEW.jpg"
-          alt="Gilles Grethen Quartet Leon Fürtig"
-        />
-        <img
-          class="img_quartet"
-          data-num="2"
-          src="./src/imgs/GG4tet-LAJM.jpeg"
-          alt="Gilles Grethen Quartet Leon Fürtig"
-        />
-        <img
-          class="img_quartet"
-          data-num="3"
-          src="./src/imgs/GG4tet-OLD-B&W.jpeg"
-          alt="Gilles Grethen Quartet Leon Fürtig"
-        />
-
-        <img
-          class="gallery_btn btn_right"
-          src="./src/imgs/btn-right.png"
-          alt="Button Left"
-        />
-        <img
-          class="gallery_btn btn_left"
-          src="./src/imgs/btn-left.png"
-          alt="Button Right"
-        />
-        <div class="dots"></div>
+    <main>
+      <div class="container--left">
+        <ul class="list_links--left">
+          <li class="list_item link_quartet">
+            <a href="#" class="link" data-name="quartet"
+              >Gilles Grethen Quartet</a
+            >
+          </li>
+          <li class="list_item link_concerts">
+            <a href="#" class="link" data-name="concerts">Concerts</a>
+          </li>
+          <li class="list_item link_contact">
+            <a href="#" class="link" data-name="contact">Contact</a>
+          </li>
+        </ul>
       </div>
-    </div>
-    <div class="card card_concerts hidden">
-      <button class="btn-card_close">X</button>
-      <h2>Concerts</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,
-        explicabo! Earum quisquam quia, rem nemo possimus nobis libero
-        consequuntur quo exercitationem quod illo commodi ipsam perspiciatis
-        beatae perferendis aspernatur voluptas!
-      </p>
-    </div>
-    <div class="card card_contact hidden">
-      <button class="btn-card_close">X</button>
-      <h2>Contact</h2>
-      <h3>Management & Booking</h3>
-      <h4>Stephanie Baustert</h4>
-      <p>Tel.: +352 123456789</p>
-      <p>Mail: Lorem ipsum dolor sit amet.</p>
-    </div>
-    <div class="container--left">
-      <ul class="list_links--left">
-        <li class="list_item link_quartet">
-          <a href="#" class="link" data-name="quartet"
-            >Gilles Grethen Quartet</a
-          >
-        </li>
-        <li class="list_item link_concerts">
-          <a href="#" class="link" data-name="concerts">Concerts</a>
-        </li>
-        <li class="list_item link_contact">
-          <a href="#" class="link" data-name="contact">Contact</a>
-        </li>
-      </ul>
-    </div>
-    <div class="container-right"></div>
-    <div class="overlay hidden"></div>
+      <div class="container-center">
+        <ul class="articles">
+          <li class="article article-border">
+            <img
+              class="article_img"
+              src="./src/imgs/cover-timeSuite.jpeg"
+              alt="Time Suite CD Cover"
+            />
+            <p class="article_description">
+              Buy our album 'Time Suite' right from my website by clicking here!
+            </p>
+          </li>
+          <li class="article article-border">
+            <img
+              class="article_img"
+              src="./src/imgs/cover-timeSuite.jpeg"
+              alt="Time Suite CD Cover"
+            />
+            <p class="article_description">
+              Buy our album 'Time Suite' right from my website by clicking here!
+            </p>
+          </li>
+          <li class="article">
+            <img
+              class="article_img"
+              src="./src/imgs/cover-timeSuite.jpeg"
+              alt="Time Suite CD Cover"
+            />
+            <p class="article_description">
+              Buy our album 'Time Suite' right from my website by clicking here!
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div class="card card_quartet">
+        <button class="btn-card_close">X</button>
+        <h2>Gilles Grethen Quartet</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,
+          explicabo! Earum quisquam quia, rem nemo possimus nobis libero
+          consequuntur quo exercitationem quod illo commodi ipsam perspiciatis
+          beatae perferendis aspernatur voluptas!
+        </p>
+        <div class="gallery">
+          <img
+            class="img_quartet"
+            data-num="1"
+            src="./src/imgs/GG4tet4_NEW.jpg"
+            alt="Gilles Grethen Quartet Leon Fürtig"
+          />
+          <img
+            class="img_quartet"
+            data-num="2"
+            src="./src/imgs/GG4tet-LAJM.jpeg"
+            alt="Gilles Grethen Quartet Leon Fürtig"
+          />
+          <img
+            class="img_quartet"
+            data-num="3"
+            src="./src/imgs/GG4tet-OLD-B&W.jpeg"
+            alt="Gilles Grethen Quartet Leon Fürtig"
+          />
+
+          <img
+            class="gallery_btn btn_right"
+            src="./src/imgs/btn-right.png"
+            alt="Button Left"
+          />
+          <img
+            class="gallery_btn btn_left"
+            src="./src/imgs/btn-left.png"
+            alt="Button Right"
+          />
+          <div class="dots"></div>
+        </div>
+      </div>
+      <div class="card card_concerts">
+        <button class="btn-card_close">X</button>
+        <h2>Concerts</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,
+          explicabo! Earum quisquam quia, rem nemo possimus nobis libero
+          consequuntur quo exercitationem quod illo commodi ipsam perspiciatis
+          beatae perferendis aspernatur voluptas!
+        </p>
+      </div>
+      <div class="card card_contact">
+        <button class="btn-card_close">X</button>
+        <h2>Contact</h2>
+        <h3>Management & Booking</h3>
+        <h4>Stephanie Baustert</h4>
+        <p>Tel.: +352 123456789</p>
+        <p>Mail: Lorem ipsum dolor sit amet.</p>
+      </div>
+      <div class="container-right"></div>
+      <div class="overlay hidden"></div>
+    </main>
   </body>
 </html>
