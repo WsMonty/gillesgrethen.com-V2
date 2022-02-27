@@ -11,14 +11,25 @@
   transition: opacity 500ms linear;
   transition: height 500ms linear 500ms;
   transition: padding 500ms linear;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .btn-card_close {
   border: none;
-  position: absolute;
+  align-self: flex-end;
   top: 4%;
   right: 3%;
   font-size: 1em;
   background-color: transparent;
   cursor: pointer;
+}
+
+.card_contact {
+  display: flex;
+}
+
+.contact {
+  margin: 1em;
 }

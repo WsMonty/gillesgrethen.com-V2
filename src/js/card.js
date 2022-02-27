@@ -1,6 +1,10 @@
 const cards = document.querySelectorAll('.card');
 const overlay = document.querySelector('.overlay');
 const centerContainer = document.querySelector('.container-center');
+const rightContainer = document.querySelector('.container-right');
+const youtube = document.querySelector('.youtube');
+const btnOpenYoutube = document.querySelector('.btn_open-youtube');
+const btnOpenSpotify = document.querySelector('.btn_open-spotify');
 
 let activeCard;
 
@@ -47,4 +51,25 @@ export const hideCards = function () {
   // Show main container
   centerContainer.style.display = 'block';
   hideElement(overlay);
+};
+
+export const openSpotify = function () {
+  if (rightContainer.style.display === 'flex') {
+    rightContainer.style.display = 'none';
+    btnOpenSpotify.textContent = 'Listen on spotify!';
+  } else {
+    rightContainer.style.display = 'flex';
+    btnOpenSpotify.textContent = 'Close spotify';
+  }
+};
+
+export const closeSpotify = function () {
+  rightContainer.style.display = 'none';
+};
+
+export const toggleYoutube = function () {
+  youtube.classList.toggle('hidden');
+  !youtube.classList.contains('hidden')
+    ? (btnOpenYoutube.textContent = 'Close youtube')
+    : (btnOpenYoutube.textContent = 'Check our live video!');
 };
