@@ -7,8 +7,7 @@ const rightContainer = document.querySelector('.container-right');
 const youtube = document.querySelector('.youtube');
 const btnOpenYoutube = document.querySelector('.btn_open-youtube');
 const btnOpenSpotify = document.querySelector('.btn_open-spotify');
-
-let activeCard;
+const navLinks = document.querySelectorAll('.list_item');
 
 //// Helper functions
 
@@ -30,19 +29,12 @@ export const showCards = function (e) {
   // Hide all cards, so only 1 is active
   cards.forEach((card) => {
     hideElement(card);
-    card.style.transform = 'scaleY(0)';
   });
   activeCard = document.querySelector(`.card_${e.target.dataset.name}`);
   // show current card
   showElement(activeCard);
   // show overlay
   showElement(overlay);
-  // Animate Card
-  gsap.to(activeCard, {
-    transform: 'scaleY(1)',
-    duration: 2,
-    ease: 'power2.out',
-  });
 };
 
 export const hideCards = function () {
@@ -72,8 +64,56 @@ export const toggleYoutube = function () {
 
 //// Cards animation
 
-const centerAnimation = gsap.to(centerContainer, {
-  transform: 'scaleY(1)',
-  duration: 2,
-  ease: 'power2.out',
-});
+// const centerAnimation = gsap.to(centerContainer, {
+//   transform: 'scaleY(1)',
+//   duration: 2,
+//   ease: 'power2.out',
+// });
+
+let activeCard;
+
+export const initAnimation = function () {
+  const tl = gsap.timeline({ defaults: { opacity: 0 } });
+
+  tl.from(navLinks, { duration: 1.5, y: -500, stagger: 0.5 }).from(
+    centerContainer,
+    {
+      duration: 1,
+      y: 100,
+    },
+    '-=1.5'
+  );
+};
+
+export const cardAnimationIn = function (e) {
+  const tl = gsap.timeline();
+  if (!activeCard) {
+    activeCard = document.querySelector(`.card_${e.target.dataset.name}`);
+
+    tl.to(centerContainer, { y: 500, opacity: 0, duration: 1 })
+      .call(hideElement, [centerContainer])
+      .call(showElement, [activeCard])
+      .fromTo(
+        activeCard,
+        { opacity: 0, y: 500 },
+        { opacity: 1, y: 0, duration: 1, ease: 'bounce' }
+      );
+    showElement(overlay);
+  } else {
+    hideElement(activeCard);
+    hideElement(centerContainer);
+    activeCard = document.querySelector(`.card_${e.target.dataset.name}`);
+    showElement(activeCard);
+    tl.from(activeCard, { opacity: 0, duration: 1.5 });
+  }
+};
+
+export const cardAnimationOut = function () {
+  hideElement(activeCard);
+  activeCard = '';
+  hideElement(overlay);
+  showElement(centerContainer);
+  const tl = gsap.timeline();
+
+  tl.to(centerContainer, { y: 0, opacity: 1, duration: 1 });
+};
