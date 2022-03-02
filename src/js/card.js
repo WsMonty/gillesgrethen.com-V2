@@ -47,7 +47,9 @@ export const hideCards = function () {
 
 export const openSpotify = function () {
   rightContainer.classList.toggle('hidden');
-  btnOpenSpotify.textContent = 'Close spotify';
+  rightContainer.classList.contains('hidden')
+    ? (btnOpenSpotify.textContent = 'Listen on Spotify!')
+    : (btnOpenSpotify.textContent = 'Close spotify');
 };
 
 export const closeSpotify = function () {
@@ -63,12 +65,6 @@ export const toggleYoutube = function () {
 };
 
 //// Cards animation
-
-// const centerAnimation = gsap.to(centerContainer, {
-//   transform: 'scaleY(1)',
-//   duration: 2,
-//   ease: 'power2.out',
-// });
 
 let activeCard;
 
@@ -87,6 +83,7 @@ export const initAnimation = function () {
 
 export const cardAnimationIn = function (e) {
   const tl = gsap.timeline();
+
   if (!activeCard) {
     activeCard = document.querySelector(`.card_${e.target.dataset.name}`);
 

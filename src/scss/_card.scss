@@ -17,15 +17,42 @@
 }
 
 .btn-card_close {
-  border: none;
+  border: 1px solid black;
+  border-radius: $border-radius;
+  padding: 1em;
   align-self: flex-end;
   top: 4%;
   right: 3%;
   font-size: 1em;
   background-color: transparent;
   cursor: pointer;
+
+  &:hover {
+    background-color: rgb(56, 54, 54);
+    color: $color-light-background;
+  }
+  &:active {
+    background-color: black;
+  }
 }
 
 .contact {
+  margin: 1em;
+}
+
+.paypal_open {
+  cursor: pointer;
+}
+
+.paypal_img {
+  height: 60%;
+  margin-bottom: 2em;
+}
+
+.paypal_shipping {
+  background-color: $color-darker-background;
+  padding: 1em;
+  border: 1px solid black;
+  border-radius: $border-radius;
   margin: 1em;
 }

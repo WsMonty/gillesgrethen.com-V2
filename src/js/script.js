@@ -1,5 +1,6 @@
 import * as card from './card.js';
-import { gallery } from './gallery.js';
+import gallery from './gallery.js';
+import initPayPalButton from './paypal.js';
 
 // if (module.hot) {
 //   module.hot.accept();
@@ -9,11 +10,12 @@ import { gallery } from './gallery.js';
 const links = document.querySelector('.list_links--left');
 const overlay = document.querySelector('.overlay');
 const btnOpenSpotify = document.querySelector('.btn_open-spotify');
-const btnCloseSpotify = document.querySelector('.btn_close-spotify');
 const btnOpenYoutube = document.querySelector('.btn_open-youtube');
+const btnOpenPaypal = document.querySelector('.btn_open-paypal');
 
-//// Gallery (Slider in Quartet Card)
+//// Initializing
 gallery();
+initPayPalButton();
 
 //// Event Hanlders for Cards opening and closing
 links.addEventListener('click', (e) => {
@@ -32,9 +34,10 @@ window.addEventListener('click', (e) => {
   card.cardAnimationOut();
 });
 btnOpenSpotify.addEventListener('click', card.openSpotify);
-btnCloseSpotify.addEventListener('click', card.closeSpotify);
 btnOpenYoutube.addEventListener('click', card.toggleYoutube);
 
 //// Controlling Animations
 
 card.initAnimation();
+
+btnOpenPaypal.addEventListener('click', (e) => card.cardAnimationIn(e));

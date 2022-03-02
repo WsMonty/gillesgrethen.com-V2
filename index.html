@@ -42,11 +42,21 @@
               src="./src/imgs/cover-timeSuite.jpeg"
               alt="Time Suite CD Cover"
             />
-            <p class="article_description">
-              Buy our album 'Time Suite' right from my website by clicking here!
-              <br />
-              <button class="btn_open-spotify">Listen on spotify!</button>
-              <button class="btn_open-youtube">Check our live video!</button>
+            <div class="article_content">
+              <p class="article_description">
+                Buy our album 'Time Suite' right from my website by clicking
+              </p>
+              <div class="article_content_buttons">
+                <button class="btn_open btn_open-paypal" data-name="paypal">
+                  Buy the album!
+                </button>
+                <button class="btn_open btn_open-spotify">
+                  Listen on spotify!
+                </button>
+                <button class="btn_open btn_open-youtube">
+                  Check our live video!
+                </button>
+              </div>
               <iframe
                 class="youtube hidden"
                 width="560"
@@ -57,7 +67,7 @@
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
               ></iframe>
-            </p>
+            </div>
           </li>
           <li class="article article-border">
             <img
@@ -161,7 +171,6 @@
       <div class="container-right hidden">
         <div class="card_content_right">
           <div class="card_side card_spotify">
-            <button class="btn_close-spotify">Close</button>
             <iframe
               style="border-radius: 12px"
               src="https://open.spotify.com/embed/album/1q7hq6f4FwFJFzzR7RkBXB?utm_source=generator&theme=1"
@@ -174,6 +183,45 @@
           </div>
         </div>
       </div>
+      <div class="card card_paypal hidden">
+        <div class="card_content">
+          <button class="btn-card_close">X</button>
+          <img
+            class="paypal_img"
+            src="./src/imgs/cover-timeSuite.jpeg"
+            alt="Time Suite Cover"
+          />
+          <div id="smart-button-container">
+            <div style="text-align: center">
+              <div style="margin-bottom: 1.25rem">
+                <h3>
+                  CD Time Suite (Digipack):
+                  <h2>15€ + Shipping costs (select your country!)</h2>
+                  <h4>
+                    You don't need a Paypal account! You can also safely enter
+                    your credit card information when clicking on the Paypal
+                    button and continuing as guest.
+                  </h4>
+                </h3>
+                <select class="paypal_shipping" id="item-options">
+                  <option value="Shipping to Germany" price="16.00">
+                    Shipping to Germany - 1.60 EUR
+                  </option>
+                  <option value="Shipping International" price="18.70">
+                    Shipping International - 3.70 EUR
+                  </option>
+                </select>
+                <select style="visibility: hidden" id="quantitySelect"></select>
+              </div>
+              <div id="paypal-button-container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script
+        src="https://www.paypal.com/sdk/js?client-id=AZuOJhphk2lqHP76TcBJzx9pernNN8M0ZphLh8u04xv8HCLCF-KzP-FKie_mLKYAdLf3N-59ZqRzgQWq&currency=EUR"
+        data-sdk-integration-source="button-factory"
+      ></script>
       <div class="overlay hidden"></div>
     </main>
   </body>

@@ -1,4 +1,4 @@
-export const gallery = function () {
+const gallery = function () {
   const btnLeft = document.querySelector('.btn_left');
   const btnRight = document.querySelector('.btn_right');
   const imgs = document.querySelectorAll('.img_quartet');
@@ -73,3 +73,5 @@ export const gallery = function () {
     }
   });
 };
+
+export default gallery;

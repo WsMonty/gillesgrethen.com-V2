@@ -38,8 +38,40 @@
     border-color: black;
     border-style: solid;
   }
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &_buttons {
+      width: fit-content;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
 }
 
 .youtube {
   margin-top: 1em;
+}
+
+.btn_open {
+  background: none;
+  border: 1px solid black;
+  padding: 1em 1.5em;
+  border-radius: $border-radius;
+  margin-top: 1em;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(56, 54, 54);
+    color: $color-light-background;
+  }
+
+  &:active {
+    background-color: rgb(14, 13, 13);
+  }
 }
