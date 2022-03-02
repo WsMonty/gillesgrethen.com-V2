@@ -1,3 +1,5 @@
+import { gsap } from 'gsap';
+
 const cards = document.querySelectorAll('.card');
 const overlay = document.querySelector('.overlay');
 const centerContainer = document.querySelector('.container-center');
@@ -8,63 +10,57 @@ const btnOpenSpotify = document.querySelector('.btn_open-spotify');
 
 let activeCard;
 
-// Helper functions
+//// Helper functions
 
 const showElement = function (element) {
+  element.classList.remove('hidden');
   element.setAttribute('data-state', 'active');
-  element.style.opacity = '1';
-  if (element.classList.contains('card')) {
-    element.style.height = '90%';
-    element.style.width = '60%';
-    element.style.padding = '4em';
-  }
 };
 const hideElement = function (element) {
-  element.style.opacity = '0';
+  element.classList.add('hidden');
   element.setAttribute('data-state', 'not-active');
-  if (element.classList.contains('card')) {
-    element.style.height = '0em';
-    element.style.width = '0em';
-    element.style.padding = '0em';
-  }
 };
 
-// Cards functionality
+//// Cards functionality
 
 export const showCards = function (e) {
   if (e.target.classList.contains('list_item')) return;
   // Hide main container
-  centerContainer.style.display = 'none';
+  hideElement(centerContainer);
   // Hide all cards, so only 1 is active
-  cards.forEach((card) => hideElement(card));
+  cards.forEach((card) => {
+    hideElement(card);
+    card.style.transform = 'scaleY(0)';
+  });
   activeCard = document.querySelector(`.card_${e.target.dataset.name}`);
   // show current card
   showElement(activeCard);
   // show overlay
-  overlay.classList.remove('hidden');
   showElement(overlay);
+  // Animate Card
+  gsap.to(activeCard, {
+    transform: 'scaleY(1)',
+    duration: 2,
+    ease: 'power2.out',
+  });
 };
 
 export const hideCards = function () {
   hideElement(activeCard);
-  overlay.classList.add('hidden');
+  hideElement(overlay);
   // Show main container
-  centerContainer.style.display = 'block';
+  showElement(centerContainer);
   hideElement(overlay);
 };
 
 export const openSpotify = function () {
-  if (rightContainer.style.display === 'flex') {
-    rightContainer.style.display = 'none';
-    btnOpenSpotify.textContent = 'Listen on spotify!';
-  } else {
-    rightContainer.style.display = 'flex';
-    btnOpenSpotify.textContent = 'Close spotify';
-  }
+  rightContainer.classList.toggle('hidden');
+  btnOpenSpotify.textContent = 'Close spotify';
 };
 
 export const closeSpotify = function () {
-  rightContainer.style.display = 'none';
+  hideElement(rightContainer);
+  btnOpenSpotify.textContent = 'Listen on spotify!';
 };
 
 export const toggleYoutube = function () {
@@ -73,3 +69,11 @@ export const toggleYoutube = function () {
     ? (btnOpenYoutube.textContent = 'Close youtube')
     : (btnOpenYoutube.textContent = 'Check our live video!');
 };
+
+//// Cards animation
+
+const centerAnimation = gsap.to(centerContainer, {
+  transform: 'scaleY(1)',
+  duration: 2,
+  ease: 'power2.out',
+});
